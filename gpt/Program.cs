@@ -27,7 +27,7 @@ namespace ChatGPT_CSharp_Example
         static string CallChatGPT(string question)
         {
             // Set up the API request
-            string apiKey = "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";
+            string apiKey = "FOOOBAR";
             string apiEndpoint = "https://api.openai.com/v1/completions";
             HttpClient httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + apiKey);
