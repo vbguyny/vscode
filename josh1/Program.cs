@@ -1,0 +1,28 @@
+﻿
+Console.WriteLine("Please enter your username: ");
+string name = Console.ReadLine();
+Console.WriteLine($"Hello, {name}!");
+Console.WriteLine("Now enter your password:");
+string password = Console.ReadLine();
+Console.WriteLine($"Your username is {name}, and your password is {password}.");
+Thread.Sleep(1000);
+Console.Write("Authenticating.");
+Thread.Sleep(1000);
+Console.Write(".");
+Thread.Sleep(1000);
+Console.WriteLine(".");
+Thread.Sleep(2000);
+Console.WriteLine($"Thanks for signing up, {name}!");
+Thread.Sleep(1500);
+Console.Write("Loading Recommended games.");
+Thread.Sleep(1000);
+Console.Write(".");
+Thread.Sleep(1000);
+Console.Write(".");
+Thread.Sleep(1000);
+Console.Write($"Here's your 3 Recommended games, {name}");
+string[] games = {"Meepcity, Brookhaven RP, Welcome to Bloxburg", "Da hood", ""};
+int max = games.Length;
+var r = new Random();
+int i = r.Next(0, max);
+Console.WriteLine(games[i]);
