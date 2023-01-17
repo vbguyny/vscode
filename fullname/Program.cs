@@ -30,7 +30,7 @@ while (true)
 
     Console.WriteLine("DO you want to play again (Ok)?");
     string prompt = Console.ReadLine()!.ToLower();
-    if (prompt.ToLower() != "ok")
+    if (prompt != "ok")
     {
         break;
     }
