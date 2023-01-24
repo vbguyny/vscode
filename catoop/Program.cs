@@ -1,25 +1,26 @@
-﻿// .w.
-Cat firstCat = new Cat();
-firstCat.Name = "Thor";
-firstCat.Age = 5;
+﻿Cat firstCat = new Cat("Thor", 5);
 firstCat.Sleep();
 
-Cat secondCat = new Cat();
-secondCat.Name = "Winter";
-secondCat.Age = 6;
+Cat secondCat = new Cat("Winter", 6);
 secondCat.Sleep();
 
-Cat cat1 = new Cat();
-Console.WriteLine("What is the name of the cat? ");
-cat1.Name = Console.ReadLine()!;
-Console.WriteLine($"How old is {cat1.Name}?");
-cat1.Age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"What is the name of the cat? ");
+string name = Console.ReadLine()!;
+Console.WriteLine($"How old is {name}?");
+int age = Convert.ToInt32(Console.ReadLine());
+Cat cat1 = new Cat(name, age);
 cat1.Sleep();
 
 class Cat
 {
     public string Name = string.Empty;
     public int Age;
+
+    public Cat(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
 
     public void Sleep()
     {
