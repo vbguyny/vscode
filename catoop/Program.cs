@@ -1,4 +1,8 @@
-﻿Cat firstCat = new Cat("Thor", 5);
+﻿Cat binx = new Cat("Binx", 2);
+binx.Gender = "boy";
+Console.WriteLine($"{binx.Name} is a {binx.Age} year old {binx.Gender} cat.");
+
+Cat firstCat = new Cat("Thor", 5);
 firstCat.Sleep();
 
 Cat secondCat = new Cat("Winter", 6);
@@ -25,6 +29,19 @@ class Cat
     public void Sleep()
     {
         Console.WriteLine($"Shh! {Name} is sleeping. It is {Age} years old!");
+    }
+
+    private string gender;
+    public string Gender 
+    {
+        get
+        {
+            return gender;
+        }
+        set
+        {
+            gender = value;
+        }
     }
 }
 
