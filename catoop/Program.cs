@@ -1,26 +1,60 @@
-﻿Cat binx = new Cat("Binx", 2);
+﻿
+Pet snake = new Pet("Snake", 99);
+snake.Speak();
+
+Pet duke = new Dog("Duke", 0);
+duke.Speak();
+
+Pet binx = new Cat("Binx", 2);
 binx.Gender = "boy";
 Console.WriteLine($"{binx.Name} is a {binx.Age} year old {binx.Gender} cat.");
+binx.Speak();
 
-Cat firstCat = new Cat("Thor", 5);
-firstCat.Sleep();
+// Cat firstCat = new Cat("Thor", 5);
+// firstCat.Sleep();
 
-Cat secondCat = new Cat("Winter", 6);
-secondCat.Sleep();
+// Cat secondCat = new Cat("Winter", 6);
+// secondCat.Sleep();
 
-Console.WriteLine($"What is the name of the cat? ");
-string name = Console.ReadLine()!;
-Console.WriteLine($"How old is {name}?");
-int age = Convert.ToInt32(Console.ReadLine());
-Cat cat1 = new Cat(name, age);
-cat1.Sleep();
+// Console.WriteLine($"What is the name of the cat? ");
+// string name = Console.ReadLine()!;
+// Console.WriteLine($"How old is {name}?");
+// int age = Convert.ToInt32(Console.ReadLine());
+// Cat cat1 = new Cat(name, age);
+// cat1.Sleep();
 
-class Cat
+class Cat : Pet
+{
+    public Cat(string name, int age) : base(name, age)
+    {
+    }
+
+    public override void Speak()
+    {
+        // Print "Meow" to the console
+        Console.WriteLine($"{Name} goes \"meow!\"");
+    }
+}
+
+class Dog : Pet
+{
+    public Dog(string name, int age) : base(name, age)
+    {
+    }
+
+    public override void Speak()
+    {
+        // Print "Meow" to the console
+        Console.WriteLine($"{Name} goes \"bark!\"");
+    }
+}
+
+class Pet
 {
     public string Name = string.Empty;
     public int Age;
 
-    public Cat(string name, int age)
+    public Pet(string name, int age)
     {
         Name = name;
         Age = age;
@@ -31,8 +65,8 @@ class Cat
         Console.WriteLine($"Shh! {Name} is sleeping. It is {Age} years old!");
     }
 
-    private string gender;
-    public string Gender 
+    private string gender = string.Empty;
+    public string Gender
     {
         get
         {
@@ -42,6 +76,11 @@ class Cat
         {
             gender = value;
         }
+    }
+
+    public virtual void Speak()
+    {
+        Console.WriteLine($"{Name} makes a sound!");
     }
 }
 
