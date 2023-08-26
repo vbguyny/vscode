@@ -24,8 +24,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      working-directory: ./webapi1
+
     steps:
-    - working-directory: ./webapi1
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
