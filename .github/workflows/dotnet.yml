@@ -24,12 +24,12 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    #defaults:
-    #  run:
-    #    working-directory: webapi1/
+    defaults:
+      run:
+        working-directory: webapi1/
     
-    env:
-      working-directory: ./webapi1
+    #env:
+    #  working-directory: ./webapi1
 
     steps:
     - uses: actions/checkout@v3
