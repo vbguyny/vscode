@@ -1,7 +1,7 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-name: .NET
+name: Build webapi1
 
 on:
   push:
@@ -45,8 +45,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
       #working-directory: ${{env.working-directory}}
-    - name: Run
-      run: dotnet run
+    #- name: Run
+    #  run: dotnet run
       #working-directory: ${{env.working-directory}}
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
