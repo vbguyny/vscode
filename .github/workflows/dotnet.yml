@@ -23,7 +23,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
+    defaults:
+      run:
+        working-directory: webapi1/
+    
     env:
       working-directory: ./webapi1
 
@@ -35,12 +39,12 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: ${{env.working-directory}}
+      #working-directory: ${{env.working-directory}}
     - name: Build
       run: dotnet build --no-restore
-      working-directory: ${{env.working-directory}}
+      #working-directory: ${{env.working-directory}}
     - name: Run
       run: dotnet run
-      working-directory: ${{env.working-directory}}
+      #working-directory: ${{env.working-directory}}
     #- name: Test
     #  run: dotnet test --no-build --verbosity normal
